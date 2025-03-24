@@ -1,0 +1,66 @@
+const int REN = 9 ;
+const int LEN = 8 ;
+const int RPWM = 6 ;
+const int LPWM = 5 ;
+
+void forward (){
+  analogWrite( RPWM , 126);
+  analogWrite( LPWM , 0);
+ 
+
+
+}
+
+void bacward (){
+  analogWrite( RPWM , 0);
+  analogWrite( LPWM , 126);
+
+
+}
+
+void stop (){
+  analogWrite( RPWM , 0);
+  analogWrite( LPWM , 0);
+
+
+}
+
+void setup() {
+
+  pinMode(REN, OUTPUT);  
+  pinMode(LEN, OUTPUT);
+  pinMode(RPWM, OUTPUT);  
+  pinMode(LPWM, OUTPUT);
+
+  digitalWrite(REN , 1);
+  digitalWrite(LEN , 1);
+
+}
+
+
+
+void loop() {
+ forward ();
+ delay(5000);
+ stop ();
+
+ stop ();
+ delay(2000);
+
+ bacward ();
+ delay(3000);
+ stop ();
+
+ stop ();
+ delay(1000);
+
+ forward ();
+ delay(4000);
+ stop ();
+
+
+ stop ();
+ delay(1000);
+ 
+
+ }
